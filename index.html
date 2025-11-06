@@ -5,23 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Camelia • Mini App Hub</title>
 
-  <!-- Preconnects (perf) -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-
-  <!-- Tailwind utility CSS + Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
   <!-- Canonical + SEO -->
-  <link rel="canonical" href="https://resphw3.netlify.app/" /> <!-- YOUR_CANONICAL_URL -->
+  <link rel="canonical" href="https://resphw3.netlify.app/" />
   <meta name="description" content="Explore three quick web apps by Camelia Simion — Weather, Joke, and World Clocks — all responsive and deployed on Netlify.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Camelia • Mini App Hub">
   <meta property="og:description" content="Explore three quick web apps: Weather, Joke, and World Clocks.">
-  <meta property="og:url" content="https://resphw3.netlify.app/"><!-- YOUR_CANONICAL_URL -->
+  <meta property="og:url" content="https://resphw3.netlify.app/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://resphw3.netlify.app/images/weathercs.png"><!-- swap if needed -->
+  <meta property="og:image" content="https://resphw3.netlify.app/images/weathercs.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -29,10 +26,8 @@
   <meta name="twitter:description" content="Explore three quick web apps: Weather, Joke, and World Clocks.">
   <meta name="twitter:image" content="https://resphw3.netlify.app/images/weathercs.png">
 
-  <!-- Favicon -->
   <link rel="icon" href="/images/Snapchat-2205782.png" type="image/png">
 
-  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -61,6 +56,7 @@
     .label{ font-size:.9rem; color:#374151; }
     .h2-icon{ display:inline-flex; align-items:center; gap:.6rem; }
     .h2-badge{ width:2.25rem; height:2.25rem; border-radius:9999px; display:inline-flex; align-items:center; justify-content:center; }
+    .note-gradient{ background: linear-gradient(90deg,#f472b6,#a78bfa,#60a5fa,#34d399,#fbbf24); }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -68,15 +64,15 @@
   <!-- NAV -->
   <header class="sticky top-0 z-40 bg-white/80 nav-backdrop border-b">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
+      <a href="index.html" class="flex items-center gap-2">
         <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-purple-700 text-white font-bold">CS</span>
         <span class="font-semibold tracking-tight">Camelia • Mini App Hub</span>
       </a>
 
       <div class="hidden md:flex items-center gap-6">
         <a href="#apps" class="hover:text-purple-700">Apps</a>
-        <a href="#about" class="hover:text-purple-700">About</a>
-        <a href="#contact" class="hover:text-purple-700">Contact</a>
+        <a href="about.html" class="hover:text-purple-700">About</a>
+        <a href="contact.html" class="hover:text-purple-700">Contact</a>
         <a href="https://sy8lzc.csb.app/#about" target="_blank" rel="noopener" class="btn text-white" style="background:var(--brand)">Open Profile</a>
       </div>
 
@@ -90,8 +86,8 @@
     <div id="mobileNav" class="md:hidden hidden border-t bg-white">
       <div class="px-4 py-3 flex flex-col gap-2">
         <a href="#apps" class="py-2">Apps</a>
-        <a href="#about" class="py-2">About</a>
-        <a href="#contact" class="py-2">Contact</a>
+        <a href="about.html" class="py-2">About</a>
+        <a href="contact.html" class="py-2">Contact</a>
         <a href="https://sy8lzc.csb.app/#about" target="_blank" rel="noopener" class="py-2 rounded-lg text-center text-white" style="background:var(--brand)">Open Profile</a>
       </div>
     </div>
@@ -107,7 +103,7 @@
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="#apps" class="btn bg-white text-gray-900 shadow-soft"><i class="fa-solid fa-rocket"></i>Browse Apps</a>
-          <a href="#contact" class="btn border border-white/40 text-white hover:bg-white/10"><i class="fa-regular fa-message"></i>Contact Me</a>
+          <a href="contact.html" class="btn border border-white/40 text-white hover:bg-white/10"><i class="fa-regular fa-message"></i>Contact Me</a>
         </div>
       </div>
 
@@ -126,6 +122,23 @@
     </div>
   </section>
 
+  <!-- QUICK CARDS -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a href="https://simcamd.netlify.app/" target="_blank" rel="noopener" class="bg-white border rounded-2xl p-5 shadow-soft hover:shadow-lg transition">
+        <div class="font-semibold text-indigo-600">Weather App</div>
+        <p class="text-sm text-gray-600 mt-2">Live weather by city with clean UI.</p>
+      </a>
+      <a href="https://csaijoke.netlify.app/" target="_blank" rel="noopener" class="bg-white border rounded-2xl p-5 shadow-soft hover:shadow-lg transition">
+        <div class="font-semibold text-emerald-600">Joke App</div>
+        <p class="text-sm text-gray-600 mt-2">One-click jokes to brighten your day.</p>
+      </a>
+      <a href="https://plusaddoncs.netlify.app/" target="_blank" rel="noopener" class="bg-white border rounded-2xl p-5 shadow-soft hover:shadow-lg transition">
+        <div class="font-semibold text-purple-600">World Clocks</div>
+        <p class="text-sm text-gray-600 mt-2">Track time across multiple cities.</p>
+      </a>
+    </div>
+  </section>
 
   <!-- APP SECTIONS -->
   <main id="apps" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 space-y-16">
@@ -141,7 +154,7 @@
           <a href="https://simcamd.netlify.app/" target="_blank" rel="noopener" class="btn text-white" style="background:var(--brand)">
             <i class="fa-solid fa-cloud-sun"></i> Open App
           </a>
-          <a href="#contact" class="btn border">Get in touch</a>
+          <a href="contact.html" class="btn border">Get in touch</a>
         </div>
       </div>
       <figure class="rounded-2xl overflow-hidden shadow-soft filter-hover">
@@ -164,7 +177,7 @@
           <a href="https://csaijoke.netlify.app/" target="_blank" rel="noopener" class="btn text-white" style="background:var(--brand)">
             <i class="fa-solid fa-face-smile-beam"></i> Open App
           </a>
-          <a href="#contact" class="btn border">Request features</a>
+          <a href="contact.html" class="btn border">Request features</a>
         </div>
       </div>
     </section>
@@ -181,7 +194,7 @@
           <a href="https://plusaddoncs.netlify.app/" target="_blank" rel="noopener" class="btn text-white" style="background:var(--brand)">
             <i class="fa-regular fa-clock"></i> Open App
           </a>
-          <a href="#contact" class="btn border">Suggest cities</a>
+          <a href="contact.html" class="btn border">Suggest cities</a>
         </div>
       </div>
       <figure class="rounded-2xl overflow-hidden shadow-soft filter-hover">
@@ -190,13 +203,13 @@
     </section>
   </main>
 
-  <!-- ABOUT -->
-  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
+  <!-- ABOUT (kept on Home) -->
+  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8">
     <div class="bg-white border rounded-2xl p-6 shadow-soft">
       <div class="flex items-center justify-between flex-wrap gap-3">
         <h3 class="text-xl font-semibold">About Me</h3>
         <div class="flex gap-2">
-          <a href="https://sy8lzc.csb.app/#about" target="_blank" rel="noopener" class="btn border">Open Full About</a>
+          <a href="about.html" class="btn border">Open Full About</a>
         </div>
       </div>
 
@@ -214,33 +227,24 @@
         </div>
         <div class="md:col-span-1">
           <div class="rounded-2xl overflow-hidden shadow-soft">
-            <img id="profileImg" src="images/Snapchat-2205782.png" alt="Camelia Simion profile photo" width="800" height="1000" loading="lazy" class="w-full h-full object-cover">
+            <img id="profileImg" src="images/Snapchat-2205782.png" alt="Camelia Simion profile photo"
+                 width="800" height="1000" loading="lazy" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-    <div class="bg-white border rounded-2xl p-6 shadow-soft">
-      <h3 class="text-xl font-semibold mb-3">Contact Me</h3>
-      <form id="contactForm" class="grid md:grid-cols-2 gap-4">
-        <label class="label">Name
-          <input id="cName" class="input mt-1" placeholder="Your name" required>
-        </label>
-        <label class="label">Email
-          <input id="cEmail" type="email" class="input mt-1" placeholder="you@example.com" required>
-        </label>
-        <label class="label md:col-span-2">Message
-          <textarea id="cMsg" class="input mt-1" rows="5" placeholder="How can I help?"></textarea>
-        </label>
-        <div class="md:col-span-2 flex items-center gap-3">
-          <button type="submit" class="btn text-white" style="background:var(--brand)">
-            <i class="fa-regular fa-paper-plane"></i> Send
-          </button>
-        </div>
-      </form>
+  <!-- OPEN-SOURCE NOTE -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="note-gradient rounded-2xl p-[2px] shadow-soft">
+      <div class="bg-white rounded-2xl p-4 flex items-center gap-3">
+        <span class="text-xl"><i class="fa-solid fa-rainbow"></i></span>
+        <p class="text-sm text-gray-700">
+          ✌️ This website was coded by <strong>Camelia Simion</strong>, and is open-sourced —
+          <a href="https://github.com/simcamelia/ResponsiveHW" class="underline text-indigo-600" target="_blank" rel="noopener">view it on GitHub</a>.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -256,7 +260,6 @@
     </div>
   </footer>
 
-  <!-- JS -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -268,21 +271,10 @@
       btn.setAttribute("aria-expanded", drawer.classList.contains("hidden") ? "false" : "true");
     });
 
-    // mailto
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = encodeURIComponent(document.getElementById("cName").value || "");
-      const email = encodeURIComponent(document.getElementById("cEmail").value || "");
-      const msg = encodeURIComponent(document.getElementById("cMsg").value || "");
-      const subject = encodeURIComponent("Website enquiry from " + (document.getElementById("cName").value || "visitor"));
-      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(email)}\n\n${decodeURIComponent(msg)}`);
-      window.location.href = `mailto:example@email.com?subject=${subject}&body=${body}`;
-    });
-
-    // Profile image fallback if extension differs (.png -> .jpg -> .jpeg -> .webp)
+    // Profile image extension fallback
     (function robustProfileImg(){
       const img = document.getElementById('profileImg');
+      if (!img) return;
       const candidates = [
         'images/Snapchat-2205782.png',
         'images/Snapchat-2205782.jpg',
