@@ -1,485 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Camelia • Mini App Hub</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Camelia • Mini App Hub</title>
 
-    <!-- Tailwind utility CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      rel="stylesheet"
-    />
+  <!-- Preconnects (perf) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-    <style>
-      :root {
-        --brand: #6b46c1;
-        --brand-2: #7c3aed;
-        --accent: #22c55e;
-      }
-      .brand-gradient {
-        background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      }
-      .shadow-soft {
-        box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
-      }
-      .filter-hover img {
-        transition: filter 0.2s ease, transform 0.2s ease;
-      }
-      .filter-hover img:hover {
-        filter: brightness(1.05) saturate(1.05);
-        transform: translateY(-2px);
-      }
-      .nav-backdrop {
-        backdrop-filter: saturate(1.2) blur(10px);
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.6rem 1rem;
-        border-radius: 0.75rem;
-      }
-      .input {
-        width: 100%;
-        border: 1px solid #e5e7eb;
-        border-radius: 0.75rem;
-        padding: 0.6rem 0.9rem;
-      }
-      .label {
-        font-size: 0.9rem;
-        color: #374151;
-      }
-      .h2-icon {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-      }
-      .h2-badge {
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius: 9999px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-    </style>
-  </head>
-  <body class="bg-gray-50 text-gray-800">
-    <!-- NAV -->
-    <header class="sticky top-0 z-40 bg-white/80 nav-backdrop border-b">
-      <nav
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
-      >
-        <a href="#" class="flex items-center gap-2">
-          <span
-            class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-purple-700 text-white font-bold"
-            >CS</span
-          >
-          <span class="font-semibold tracking-tight"
-            >Camelia • Mini App Hub</span
-          >
-        </a>
+  <!-- Tailwind utility CSS + Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
-        <div class="hidden md:flex items-center gap-6">
-          <a href="#apps" class="hover:text-purple-700">Apps</a>
-          <a href="#about" class="hover:text-purple-700">About</a>
-          <a href="#contact" class="hover:text-purple-700">Contact</a>
-          <a
-            href="https://sy8lzc.csb.app/#about"
-            target="_blank"
-            rel="noopener"
-            class="btn text-white"
-            style="background: var(--brand)"
-            >Open Profile</a
-          >
-        </div>
+  <!-- Canonical + SEO -->
+  <link rel="canonical" href="https://resphw3.netlify.app/" /> <!-- YOUR_CANONICAL_URL -->
+  <meta name="description" content="Explore three quick web apps by Camelia Simion — Weather, Joke, and World Clocks — all responsive and deployed on Netlify.">
 
-        <button
-          id="menuBtn"
-          class="md:hidden p-2 rounded-lg border"
-          aria-label="Open menu"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </nav>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Camelia • Mini App Hub">
+  <meta property="og:description" content="Explore three quick web apps: Weather, Joke, and World Clocks.">
+  <meta property="og:url" content="https://resphw3.netlify.app/"><!-- YOUR_CANONICAL_URL -->
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://resphw3.netlify.app/images/weathercs.png"><!-- swap if needed -->
 
-      <div id="mobileNav" class="md:hidden hidden border-t bg-white">
-        <div class="px-4 py-3 flex flex-col gap-2">
-          <a href="#apps" class="py-2">Apps</a>
-          <a href="#about" class="py-2">About</a>
-          <a href="#contact" class="py-2">Contact</a>
-          <a
-            href="https://sy8lzc.csb.app/#about"
-            target="_blank"
-            rel="noopener"
-            class="py-2 rounded-lg text-center text-white"
-            style="background: var(--brand)"
-            >Open Profile</a
-          >
-        </div>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Camelia • Mini App Hub">
+  <meta name="twitter:description" content="Explore three quick web apps: Weather, Joke, and World Clocks.">
+  <meta name="twitter:image" content="https://resphw3.netlify.app/images/weathercs.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/Snapchat-2205782.png" type="image/png">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Camelia • Mini App Hub",
+    "url":"https://resphw3.netlify.app/",
+    "creator":{"@type":"Person","name":"Camelia Simion","jobTitle":"Technical Support Engineer II"},
+    "about":"Weather, Joke, and World Clocks mini apps",
+    "mainEntity":{"@type":"ItemList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Weather App","url":"https://simcamd.netlify.app/"},
+      {"@type":"ListItem","position":2,"name":"Joke App","url":"https://csaijoke.netlify.app/"},
+      {"@type":"ListItem","position":3,"name":"World Clocks","url":"https://plusaddoncs.netlify.app/"}
+    ]}
+  }
+  </script>
+
+  <style>
+    :root { --brand:#6b46c1; --brand-2:#7c3aed; --accent:#22c55e; }
+    .brand-gradient{ background: linear-gradient(135deg, var(--brand), var(--brand-2)); }
+    .shadow-soft{ box-shadow:0 10px 30px rgba(17,24,39,.12); }
+    .filter-hover img{ transition: filter .2s ease, transform .2s ease; }
+    .filter-hover img:hover{ filter:brightness(1.05) saturate(1.05); transform:translateY(-2px); }
+    .nav-backdrop{ backdrop-filter:saturate(1.2) blur(10px); }
+    .btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1rem; border-radius:.75rem; }
+    .input{ width:100%; border:1px solid #e5e7eb; border-radius:.75rem; padding:.6rem .9rem; }
+    .label{ font-size:.9rem; color:#374151; }
+    .h2-icon{ display:inline-flex; align-items:center; gap:.6rem; }
+    .h2-badge{ width:2.25rem; height:2.25rem; border-radius:9999px; display:inline-flex; align-items:center; justify-content:center; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 bg-white/80 nav-backdrop border-b">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-purple-700 text-white font-bold">CS</span>
+        <span class="font-semibold tracking-tight">Camelia • Mini App Hub</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#apps" class="hover:text-purple-700">Apps</a>
+        <a href="#about" class="hover:text-purple-700">About</a>
+        <a href="#contact" class="hover:text-purple-700">Contact</a>
+        <a href="https://sy8lzc.csb.app/#about" target="_blank" rel="noopener" class="btn text-white" style="background:var(--brand)">Open Profile</a>
       </div>
-    </header>
 
-    <!-- HERO -->
-    <section class="brand-gradient text-white">
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid lg:grid-cols-2 gap-8 items-center"
-      >
-        <div>
-          <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight">
-            Apps I've created
-          </h1>
-          <p class="mt-4 text-white/90 max-w-2xl">
-            Explore a weather dashboard, a playful joke generator, and a handy
-            world clocks tool — all built by me, Camelia Simion, and deployed on
-            Netlify.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#apps" class="btn bg-white text-gray-900 shadow-soft"
-              ><i class="fa-solid fa-rocket"></i>Browse Apps</a
-            >
-            <a
-              href="#contact"
-              class="btn border border-white/40 text-white hover:bg-white/10"
-              ><i class="fa-regular fa-message"></i>Contact Me</a
-            >
-          </div>
-        </div>
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg border" aria-label="Open menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
 
-        <!-- 3 responsive images -->
-        <div class="grid grid-cols-2 gap-3 rounded-2xl overflow-hidden">
-          <div class="col-span-2 rounded-2xl overflow-hidden shadow-soft">
-            <img
-              src="images/weathercs.png"
-              alt="Weather app showcase"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="rounded-2xl overflow-hidden shadow-soft">
-            <img
-              src="images/joke.png"
-              alt="Joke app showcase"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="rounded-2xl overflow-hidden shadow-soft">
-            <img
-              src="images/worldclock.png"
-              alt="World clocks app showcase"
-              class="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+    <div id="mobileNav" class="md:hidden hidden border-t bg-white">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#apps" class="py-2">Apps</a>
+        <a href="#about" class="py-2">About</a>
+        <a href="#contact" class="py-2">Contact</a>
+        <a href="https://sy8lzc.csb.app/#about" target="_blank" rel="noopener" class="py-2 rounded-lg text-center text-white" style="background:var(--brand)">Open Profile</a>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- APP SECTIONS -->
-    <main
-      id="apps"
-      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 space-y-16"
-    >
-      <!-- Weather -->
-      <section class="grid lg:grid-cols-2 gap-8 items-center">
-        <div>
-          <h2 class="text-2xl font-bold h2-icon">
-            <span class="h2-badge bg-indigo-100 text-indigo-700"
-              ><i class="fa-solid fa-cloud-sun"></i
-            ></span>
-            Weather App
-          </h2>
-          <p class="text-gray-600 mt-2">
-            Search any city, get current conditions and a clean summary. Built
-            with responsive UI and API integration.
-          </p>
-          <div class="mt-4 flex gap-3">
-            <a
-              href="https://simcamd.netlify.app/"
-              target="_blank"
-              rel="noopener"
-              class="btn text-white"
-              style="background: var(--brand)"
-            >
-              <i class="fa-solid fa-cloud-sun"></i> Open App
-            </a>
-            <a href="#contact" class="btn border">Get in touch</a>
-          </div>
-        </div>
-        <figure class="rounded-2xl overflow-hidden shadow-soft filter-hover">
-          <img
-            src="images/weathercs.png"
-            alt="Weather App Screenshot"
-            class="w-full h-full object-cover"
-          />
-        </figure>
-      </section>
-
-      <!-- Joke -->
-      <section class="grid lg:grid-cols-2 gap-8 items-center">
-        <figure
-          class="order-last lg:order-first rounded-2xl overflow-hidden shadow-soft filter-hover"
-        >
-          <img
-            src="images/joke.png"
-            alt="Joke App Screenshot"
-            class="w-full h-full object-cover"
-          />
-        </figure>
-        <div>
-          <h2 class="text-2xl font-bold h2-icon">
-            <span class="h2-badge bg-emerald-100 text-emerald-700"
-              ><i class="fa-solid fa-face-smile-beam"></i
-            ></span>
-            Joke App
-          </h2>
-          <p class="text-gray-600 mt-2">
-            Click for an instant dose of fun. A tiny app that demonstrates
-            fetching content and snappy UI feedback.
-          </p>
-          <div class="mt-4 flex gap-3">
-            <a
-              href="https://csaijoke.netlify.app/"
-              target="_blank"
-              rel="noopener"
-              class="btn text-white"
-              style="background: var(--brand)"
-            >
-              <i class="fa-solid fa-face-smile-beam"></i> Open App
-            </a>
-            <a href="#contact" class="btn border">Request features</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- World Clocks -->
-      <section class="grid lg:grid-cols-2 gap-8 items-center">
-        <div>
-          <h2 class="text-2xl font-bold h2-icon">
-            <span class="h2-badge bg-purple-100 text-purple-700"
-              ><i class="fa-regular fa-clock"></i
-            ></span>
-            World Clocks App
-          </h2>
-          <p class="text-gray-600 mt-2">
-            Keep track of multiple time zones for work and family — clean
-            layout, responsive, and easy to scan.
-          </p>
-          <div class="mt-4 flex gap-3">
-            <a
-              href="https://plusaddoncs.netlify.app/"
-              target="_blank"
-              rel="noopener"
-              class="btn text-white"
-              style="background: var(--brand)"
-            >
-              <i class="fa-regular fa-clock"></i> Open App
-            </a>
-            <a href="#contact" class="btn border">Suggest cities</a>
-          </div>
-        </div>
-        <figure class="rounded-2xl overflow-hidden shadow-soft filter-hover">
-          <img
-            src="images/worldclock.png"
-            alt="World Clocks App Screenshot"
-            class="w-full h-full object-cover"
-          />
-        </figure>
-      </section>
-    </main>
-
-    <!-- ABOUT -->
-    <section
-      id="about"
-      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12"
-    >
-      <div class="bg-white border rounded-2xl p-6 shadow-soft">
-        <div class="flex items-center justify-between flex-wrap gap-3">
-          <h3 class="text-xl font-semibold">About Me</h3>
-          <div class="flex gap-2">
-            <a
-              href="https://sy8lzc.csb.app/#about"
-              target="_blank"
-              rel="noopener"
-              class="btn border"
-              >Open Full About</a
-            >
-          </div>
-        </div>
-
-        <div class="mt-4 grid md:grid-cols-3 gap-6 items-start">
-          <div class="md:col-span-2">
-            <p class="text-sm text-gray-700">
-              Hi, I’m <strong>Camelia Simion</strong> — a Technical Support
-              Engineer II (IoT) passionate about AI, responsive design, and
-              creating tools that blend creativity with practicality.
-            </p>
-            <ul class="text-sm text-gray-700 mt-3 list-disc pl-5 space-y-1">
-              <li>Mini-apps: Weather, Jokes, and World Clocks.</li>
-              <li>Interests: IoT, software development, and UX design.</li>
-              <li>
-                Stack: HTML/CSS (Tailwind), JavaScript, Netlify, and APIs.
-              </li>
-            </ul>
-          </div>
-          <div class="md:col-span-1">
-            <div class="rounded-2xl overflow-hidden shadow-soft">
-              <img
-                id="profileImg"
-                src="images/Snapchat-2205782.png"
-                alt="Camelia Simion profile photo"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-      <div class="bg-white border rounded-2xl p-6 shadow-soft">
-        <h3 class="text-xl font-semibold mb-3">Contact Me</h3>
-        <form id="contactForm" class="grid md:grid-cols-2 gap-4">
-          <label class="label"
-            >Name
-            <input
-              id="cName"
-              class="input mt-1"
-              placeholder="Your name"
-              required
-            />
-          </label>
-
-          <label class="label"
-            >Email
-            <input
-              id="cEmail"
-              type="email"
-              class="input mt-1"
-              placeholder="you@example.com"
-              required
-            />
-          </label>
-
-          <label class="label md:col-span-2"
-            >Message
-            <textarea
-              id="cMsg"
-              class="input mt-1"
-              rows="5"
-              placeholder="How can I help?"
-            ></textarea>
-          </label>
-
-          <div class="md:col-span-2 flex items-center gap-3">
-            <button
-              type="submit"
-              class="btn text-white"
-              style="background: var(--brand)"
-            >
-              <i class="fa-regular fa-paper-plane"></i> Send
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="border-t">
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"
-      >
-        <p class="text-sm text-gray-600">
-          © <span id="year"></span> Camelia Simion • Mini App Hub
+  <!-- HERO -->
+  <section class="brand-gradient text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight">Apps I've created</h1>
+        <p class="mt-4 text-white/90 max-w-2xl">
+          Explore a weather dashboard, a playful joke generator, and a handy world clocks tool — all built by me, Camelia Simion, and deployed on Netlify.
         </p>
-        <div class="flex flex-wrap gap-3">
-          <a
-            href="https://simcamd.netlify.app/"
-            target="_blank"
-            rel="noopener"
-            class="btn border bg-white hover:bg-gray-50"
-            >Weather</a
-          >
-          <a
-            href="https://csaijoke.netlify.app/"
-            target="_blank"
-            rel="noopener"
-            class="btn border bg-white hover:bg-gray-50"
-            >Jokes</a
-          >
-          <a
-            href="https://plusaddoncs.netlify.app/"
-            target="_blank"
-            rel="noopener"
-            class="btn border bg-white hover:bg-gray-50"
-            >World Clocks</a
-          >
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#apps" class="btn bg-white text-gray-900 shadow-soft"><i class="fa-solid fa-rocket"></i>Browse Apps</a>
+          <a href="#contact" class="btn border border-white/40 text-white hover:bg-white/10"><i class="fa-regular fa-message"></i>Contact Me</a>
         </div>
       </div>
-    </footer>
 
-    <!-- JS -->
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-      const btn = document.getElementById("menuBtn");
-      const drawer = document.getElementById("mobileNav");
-      btn.addEventListener("click", () => drawer.classList.toggle("hidden"));
+      <!-- 3 responsive images -->
+      <div class="grid grid-cols-2 gap-3 rounded-2xl overflow-hidden">
+        <div class="col-span-2 rounded-2xl overflow-hidden shadow-soft">
+          <img src="images/weathercs.png" alt="Weather app showcase" width="1200" height="750" loading="lazy" class="w-full h-full object-cover">
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-soft">
+          <img src="images/joke.png" alt="Joke app showcase" width="800" height="500" loading="lazy" class="w-full h-full object-cover">
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-soft">
+          <img src="images/worldclock.png" alt="World clocks app showcase" width="800" height="500" loading="lazy" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
 
-      // mailto
-      const form = document.getElementById("contactForm");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = encodeURIComponent(
-          document.getElementById("cName").value || ""
-        );
-        const email = encodeURIComponent(
-          document.getElementById("cEmail").value || ""
-        );
-        const msg = encodeURIComponent(
-          document.getElementById("cMsg").value || ""
-        );
-        const subject = encodeURIComponent(
-          "Website enquiry from " +
-            (document.getElementById("cName").value || "visitor")
-        );
-        const body = encodeURIComponent(
-          `Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(
-            email
-          )}\n\n${decodeURIComponent(msg)}`
-        );
-        window.location.href = `mailto:example@email.com?subject=${subject}&body=${body}`;
-      });
+  <!-- QUICK CARDS (icons removed) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a href="https://simcamd.netlify.app/" target="_blank" rel="noopener" class="bg-white border rounded-2xl p-5 shadow-soft hover:shadow-lg transition">
+        <div class="font-semibold text-indigo-600">Weather App</div>
+        <p class="text-sm text-gray-600 mt-2">Live weather by city with clean UI.</p>
+      </a>
+      <a href="https://csaijoke.netlify.app/" target="_blank" rel="noopener" class="bg-white border rounded-2xl p-5 shadow-soft hover:shadow-lg transition">
+        <div class="font-semibold text-emerald-600">Joke App</div>
+        <p class="text-sm text-gray-600 mt-2">One-click jokes to brighten your day.</p>
+      </a>
+      <a href="https://plusaddoncs.netlify.app/" target="_blank" rel="noopener" class="bg-white border rounded-2xl p-5 shadow-soft hover:shadow-lg transition">
+        <div class="font-semibold text-purple-600">World Clocks</div>
+        <p class="text-sm text-gray-600 mt-2">Track time across multiple cities.</p>
+      </a>
+    </div>
+  </section>
 
-      // Profile image fallback if extension differs (.png -> .jpg -> .jpeg -> .webp)
-      (function robustProfileImg() {
-        const img = document.getElementById("profileImg");
-        const candidates = [
-          "images/Snapchat-2205782.png",
-          "images/Snapchat-2205782.jpg",
-          "images/Snapchat-2205782.jpeg",
-          "images/Snapchat-2205782.webp",
-        ];
-        let i = 0;
-        img.onerror = () => {
-          i++;
-          if (i < candidates.length) img.src = candidates[i];
-        };
-        img.src = candidates[0];
-      })();
-    </script>
-  </body>
+  <!-- APP SECTIONS -->
+  <main id="apps" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 space-y-16">
+    <!-- Weather -->
+    <section class="grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl font-bold h2-icon">
+          <span class="h2-badge bg-indigo-100 text-indigo-700"><i class="fa-solid fa-cloud-sun"></i></span>
+          Weather App
+        </h2>
+        <p class="text-gray-600 mt-2">Search any city, get current conditions and a clean summary. Built with responsive UI and API integration.</p>
+        <div class="mt-4 flex gap-3">
+          <a href="https://simcamd.netlify.app/" target="_blank" rel="noopener" class="btn text-white" style="background:var(--brand)">
+            <i class="fa-solid fa-cloud-sun"></i> Open App
+          </a>
+          <a href="#contact" class="btn border">Get in touch</a>
+        </div>
+      </div>
+      <figure class="rounded-2xl overflow-hidden shadow-soft filter-hover">
+        <img src="images/weathercs.png" alt="Weather App Screenshot" width="1200" height="750" loading="lazy" class="w-full h-full object-cover">
+      </figure>
+    </section>
+
+    <!-- Joke -->
+    <section class="grid lg:grid-cols-2 gap-8 items-center">
+      <figure class="order-last lg:order-first rounded-2xl overflow-hidden shadow-soft filter-hover">
+        <img src="images/joke.png" alt="Joke App Screenshot" width="1200" height="750" loading="lazy" class="w-full h-full object-cover">
+      </figure>
+      <div>
+        <h2 class="text-2xl font-bold h2-icon">
+          <span class="h2-badge bg-emerald-100 text-emerald-700"><i class="fa-solid fa-face-smile-beam"></i></span>
+          Joke App
+        </h2>
+        <p class="text-gray-600 mt-2">Click for an instant dose of fun. A tiny app that demonstrates fetching content and snappy UI feedback.</p>
+        <div class="mt-4 flex gap-3">
+          <a href="https://csaijoke.netlify.app/" target="_blank" rel="noopener" class="btn text-white" style="background:var(--brand)">
+            <i class="fa-solid fa-face-smile-beam"></i> Open App
+          </a>
+          <a href="#contact" class="btn border">Request features</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- World Clocks -->
+    <section class="grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl font-bold h2-icon">
+          <span class="h2-badge bg-purple-100 text-purple-700"><i class="fa-regular fa-clock"></i></span>
+          World Clocks App
+        </h2>
+        <p class="text-gray-600 mt-2">Keep track of multiple time zones for work and family — clean layout, responsive, and easy to scan.</p>
+        <div class="mt-4 flex gap-3">
+          <a href="https://plusaddoncs.netlify.app/" target="_blank" rel="noopener" class="btn text-white" style="background:var(--brand)">
+            <i class="fa-regular fa-clock"></i> Open App
+          </a>
+          <a href="#contact" class="btn border">Suggest cities</a>
+        </div>
+      </div>
+      <figure class="rounded-2xl overflow-hidden shadow-soft filter-hover">
+        <img src="images/worldclock.png" alt="World Clocks App Screenshot" width="1200" height="750" loading="lazy" class="w-full h-full object-cover">
+      </figure>
+    </section>
+  </main>
+
+  <!-- ABOUT -->
+  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
+    <div class="bg-white border rounded-2xl p-6 shadow-soft">
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <h3 class="text-xl font-semibold">About Me</h3>
+        <div class="flex gap-2">
+          <a href="https://sy8lzc.csb.app/#about" target="_blank" rel="noopener" class="btn border">Open Full About</a>
+        </div>
+      </div>
+
+      <div class="mt-4 grid md:grid-cols-3 gap-6 items-start">
+        <div class="md:col-span-2">
+          <p class="text-sm text-gray-700">
+            Hi, I’m <strong>Camelia Simion</strong> — a Technical Support Engineer II (IoT) passionate about AI,
+            responsive design, and creating tools that blend creativity with practicality.
+          </p>
+          <ul class="text-sm text-gray-700 mt-3 list-disc pl-5 space-y-1">
+            <li>Mini-apps: Weather, Jokes, and World Clocks.</li>
+            <li>Interests: IoT, software development, and UX design.</li>
+            <li>Stack: HTML/CSS (Tailwind), JavaScript, Netlify, and APIs.</li>
+          </ul>
+        </div>
+        <div class="md:col-span-1">
+          <div class="rounded-2xl overflow-hidden shadow-soft">
+            <img id="profileImg" src="images/Snapchat-2205782.png" alt="Camelia Simion profile photo" width="800" height="1000" loading="lazy" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="bg-white border rounded-2xl p-6 shadow-soft">
+      <h3 class="text-xl font-semibold mb-3">Contact Me</h3>
+      <form id="contactForm" class="grid md:grid-cols-2 gap-4">
+        <label class="label">Name
+          <input id="cName" class="input mt-1" placeholder="Your name" required>
+        </label>
+        <label class="label">Email
+          <input id="cEmail" type="email" class="input mt-1" placeholder="you@example.com" required>
+        </label>
+        <label class="label md:col-span-2">Message
+          <textarea id="cMsg" class="input mt-1" rows="5" placeholder="How can I help?"></textarea>
+        </label>
+        <div class="md:col-span-2 flex items-center gap-3">
+          <button type="submit" class="btn text-white" style="background:var(--brand)">
+            <i class="fa-regular fa-paper-plane"></i> Send
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+      <p class="text-sm text-gray-600">© <span id="year"></span> Camelia Simion • Mini App Hub</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://simcamd.netlify.app/" target="_blank" rel="noopener" class="btn border bg-white hover:bg-gray-50">Weather</a>
+        <a href="https://csaijoke.netlify.app/" target="_blank" rel="noopener" class="btn border bg-white hover:bg-gray-50">Jokes</a>
+        <a href="https://plusaddoncs.netlify.app/" target="_blank" rel="noopener" class="btn border bg-white hover:bg-gray-50">World Clocks</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile drawer + a11y
+    const btn = document.getElementById("menuBtn");
+    const drawer = document.getElementById("mobileNav");
+    btn.addEventListener("click", () => {
+      drawer.classList.toggle("hidden");
+      btn.setAttribute("aria-expanded", drawer.classList.contains("hidden") ? "false" : "true");
+    });
+
+    // mailto
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById("cName").value || "");
+      const email = encodeURIComponent(document.getElementById("cEmail").value || "");
+      const msg = encodeURIComponent(document.getElementById("cMsg").value || "");
+      const subject = encodeURIComponent("Website enquiry from " + (document.getElementById("cName").value || "visitor"));
+      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(email)}\n\n${decodeURIComponent(msg)}`);
+      window.location.href = `mailto:example@email.com?subject=${subject}&body=${body}`;
+    });
+
+    // Profile image fallback if extension differs (.png -> .jpg -> .jpeg -> .webp)
+    (function robustProfileImg(){
+      const img = document.getElementById('profileImg');
+      const candidates = [
+        'images/Snapchat-2205782.png',
+        'images/Snapchat-2205782.jpg',
+        'images/Snapchat-2205782.jpeg',
+        'images/Snapchat-2205782.webp'
+      ];
+      let i = 0;
+      img.onerror = () => { i++; if (i < candidates.length) img.src = candidates[i]; };
+      img.src = candidates[0];
+    })();
+  </script>
+</body>
 </html>
