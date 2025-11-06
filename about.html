@@ -1,45 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>About [Your name]</title>
-  </head>
-  <body>
-    <a href="index.html" class="homepage-link">Back to homepage</a>
-    <h1>About me</h1>
-    <h3>Front-end developer from [City], [Country]</h3>
-    <div class="about-paragraphs">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam
-        aperiam provident tempora? Cumque adipisci, non dolorem quia, odit qui
-        alias veniam excepturi rem dolor fugit dignissimos, sed voluptatum
-        blanditiis harum.
-        <br />
-        <br />
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam
-        aperiam provident tempora? Cumque adipisci, non dolorem quia, odit qui
-        alias veniam excepturi rem dolor fugit dignissimos, sed voluptatum
-        blanditiis harum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam
-        aperiam provident tempora? Cumque adipisci, non dolorem quia, odit qui
-        alias veniam excepturi rem dolor fugit dignissimos, sed voluptatum
-        blanditiis harum.
-        <br />
-        <br />
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam
-        aperiam provident tempora? Cumque adipisci, non dolorem quia, odit qui
-        alias veniam excepturi rem dolor fugit dignissimos, sed voluptatum
-        blanditiis harum.
-      </p>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>About • Camelia Mini App Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="canonical" href="https://resphw3.netlify.app/about.html" />
+  <meta name="description" content="About Camelia Simion — Technical Support Engineer II (IoT).">
+  <style>
+    :root { --brand:#6b46c1; }
+    .btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1rem; border-radius:.75rem; }
+    .shadow-soft{ box-shadow:0 10px 30px rgba(17,24,39,.12); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="sticky top-0 z-40 bg-white/80 border-b">
+    <nav class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-semibold">← Home</a>
+      <div class="flex items-center gap-4">
+        <a href="about.html" class="text-purple-700 font-medium">About</a>
+        <a href="contact.html" class="hover:text-purple-700">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-extrabold">About Me</h1>
+    <div class="mt-6 grid md:grid-cols-3 gap-6 items-start">
+      <div class="md:col-span-2">
+        <p class="text-gray-700">
+          Hi, I’m <strong>Camelia Simion</strong> — a Technical Support Engineer II (IoT) passionate about AI,
+          responsive design, and creating tools that blend creativity with practicality.
+        </p>
+        <ul class="text-gray-700 mt-3 list-disc pl-5 space-y-1">
+          <li>Mini-apps: Weather, Jokes, and World Clocks.</li>
+          <li>Interests: IoT, software development, and UX design.</li>
+          <li>Stack: HTML/CSS (Tailwind), JavaScript, Netlify, and APIs.</li>
+        </ul>
+        <div class="mt-6">
+          <a href="https://github.com/simcamelia/ResponsiveHW" target="_blank" rel="noopener"
+             class="btn border bg-white hover:bg-gray-50"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+        </div>
+      </div>
+      <div>
+        <div class="rounded-2xl overflow-hidden shadow-soft">
+          <img id="profileImg" src="images/Snapchat-2205782.png" alt="Camelia Simion profile photo"
+               width="800" height="1000" loading="lazy" class="w-full h-full object-cover">
+        </div>
+      </div>
     </div>
-    <div id="contact">
-      <h2>📮 Contact me</h2>
-      <a href="mailto:[email]" class="email-link"> [Your email] </a>
-    </div>
-  </body>
+  </main>
+
+  <script>
+    (function robustProfileImg(){
+      const img = document.getElementById('profileImg');
+      const candidates = [
+        'images/Snapchat-2205782.png',
+        'images/Snapchat-2205782.jpg',
+        'images/Snapchat-2205782.jpeg',
+        'images/Snapchat-2205782.webp'
+      ];
+      let i = 0;
+      img.onerror = () => { i++; if (i < candidates.length) img.src = candidates[i]; };
+      img.src = candidates[0];
+    })();
+  </script>
+</body>
 </html>
